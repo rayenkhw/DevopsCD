@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps CD pipeline workshop</title>
+</head>
+<body>
+    <header>
+        <h1>DevOps CD pipleline workshop</h1>
+    </header>
+    <div class="container">
+        <div class="blog-post">
+            <h2>What is Continuous Deployment (CD) ?</h2>
+            <img src="../../../assets/images/cd.png" alt="Blog post image">
+            <h4>whenever DevOps is mentioned the first 2 keywords that come to mind are automation and CI/CD pipelines.</h4>
+                    <h4>And in this workshop we will focus on the CD (Continuous Deployment) part</h4>
+            <div class="container">
+                
+                <div class="blog-post">
+                    <h4>Continuous deployment is a strategy for software development and releases in which every code change is automatically run through a pipeline of tests and inspections before being pushed into production 
+                        (ressource : techtarget)</h4>
+                </div>
+            </div>
+        </div>
+        <div class="blog-post">
+            
+            <img src="../../../assets/images/cdpipeline.png" alt="Blog post image">
+        </div>
+        <div class="blog-post">
+            
+                    <img src="../../../assets/images/tools1.png" alt="Blog post image">
+                    <img src="../../../assets/images/tools2.png" alt="Blog post image">
+                
+        </div>
+        <div class="blog-post">
+            <h2>A step by step guide</h2>
+            <img src="../../../assets/images/repositor.png" alt="Blog post image"><br>
+            This is what your repository should look like at the end <br>
+            <img src="../../../assets/images/dockerfile.png" alt="Blog post image"><br>
+            the dockerfile <br>
+            <img src="../../../assets/images/kubernetesstaging.png" alt="Blog post image"><br>
+            this is your staging deployment kubernetes configuration file k8s/staging-deployment.yaml <br>
+            <img src="../../../assets/images/kubernetesproduction.png" alt="Blog post image"><br>
+            this is your production deployment kubernetes configuration file k8s/production-deployment.yaml<br>
+            <img src="../../../assets/images/githubactions.png" alt="Blog post image"><br>
+            https://www.mediafire.com/file/4jm5a7qg34gglp1/cd-pipeline.yml/file<br>
+            this is your GitHub Actions Workflow configuration file .github/workflows/cd-pipeline.yml<br>
+            <img src="../../../assets/images/githubsecrets.png" alt="Blog post image"><br>
+            Setting Up GitHub Secrets<br>
+            <img src="../../../assets/images/python.png" alt="Blog post image"><br>
+            Ensure you have a simple Python web application to test the pipeline. For example, create a main.py file inside the app directory<br>
+            <img src="../../../assets/images/requirements.png" alt="Blog post image"><br>
+            requirements.txt file<br>
+            <img src="../../../assets/images/git.png" alt="Blog post image"><br>
+            Commit your changes and push to the main branch<br>
+            <img src="../../../assets/images/grafanapro.png" alt="Blog post image"><br>
+            Install Prometheus and Grafana using Helm<br>
+            <img src="../../../assets/images/prometheus.png" alt="Blog post image"><br>
+            Add this configuration to your Prometheus values.yaml or as a ConfigMap<br>
+            <img src="../../../assets/images/grafana.png" alt="Blog post image"><br>
+            Access Grafana<br>
+        </div>
+    </div>
+    
+</body>
+</html>
