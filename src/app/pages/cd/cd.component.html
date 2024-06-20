@@ -11,17 +11,121 @@
     </header>
     <div class="container">
         <div class="blog-post">
+
+
+            
+
+
+
+
+
+
             <h2>What is Continuous Deployment (CD) ?</h2>
             <img src="../../../assets/images/cd.png" alt="Blog post image">
-            <h4>whenever DevOps is mentioned the first 2 keywords that come to mind are automation and CI/CD pipelines.</h4>
-                    <h4>And in this workshop we will focus on the CD (Continuous Deployment) part</h4>
+            <h4>whenever DevOps is mentioned the first 2 keywords that come to mind are automation and CI/CD pipelines and in this workshop we will focus on the CD (Continuous Deployment) part.</h4>
+                    
+                    <h4>Continuous deployment is a strategy for software development and releases in which every code change is automatically run through a pipeline of tests and inspections before being pushed into production 
+                        (ressource : techtarget)</h4><br>
             <div class="container">
                 
+                
                 <div class="blog-post">
-                    <h4>Continuous deployment is a strategy for software development and releases in which every code change is automatically run through a pipeline of tests and inspections before being pushed into production 
-                        (ressource : techtarget)</h4>
+                    
+
+                                <h3> A simple demonstration of the workings of a CD pipleline</h3>
+                                <img src="../../../assets/images/jenkins.png" alt="Blog post image"> 
+                                <img src="../../../assets/images/gitactions.png" alt="Blog post image">
+                        <div class="pipeline">
+                            
+                            <div class="stage" [ngClass]="{ 'completed': stages.test.completed }" >
+                              <div class="stage-name">Test</div>
+                              <div class="stage-status">{{ stages.test.status }}</div>
+                            </div>
+                                
+                            <div class="stage" [ngClass]="{ 'completed': stages.build.completed }" >
+                              <div class="stage-name">Build</div>
+                              <div class="stage-status">{{ stages.build.status }}</div>
+                            </div>
+                            <div class="stage" [ngClass]="{ 'completed': stages.deploy.completed }" >
+                              <div class="stage-name">Deploy</div>
+                              <div class="stage-status">{{ stages.deploy.status }}</div>
+                            </div>
+                            <div class="stage" [ngClass]="{ 'completed': stages.monitor.completed }" >
+                              <div class="stage-name">Monitor</div>
+                              <div class="stage-status">{{ stages.monitor.status }}</div>
+                            </div>
+
+                            <br>
+                            
+                          </div>
+
+
+                            <!-- Test Junit -->
+                            <h5> JUnit is a unit testing framework for Java programming language </h5>
+                            <img src="../../../assets/images/Junit.png" alt="Blog post image"> 
+                            <img src="../../../assets/images/pytest.png" alt="Blog post image"> 
+                          <div class="pipeline">
+                            <div class="stage" [ngClass]="{ 'completed': steps.Junit.completed }" (click)="togglejunit()">
+                              <div class="stage-name">testing</div>
+                              <div class="stage-status">{{ steps.Junit.status }}</div>
+                            </div>
+                          </div>
+                        
+                          <!-- artifact build -->
+                          <h5> Docker Hub is a container registry built for developers and open source contributors to find, use, and share their container images </h5>
+                          <img src="../../../assets/images/dockerhub.png" alt="Blog post image">
+                          <img src="../../../assets/images/nexus.png" alt="Blog post image">
+                          <div class="pipeline">
+                            <div class="stage" [ngClass]="{ 'completed': steps.dockerhub.completed }" (click)="toggledockerhub()">
+                              <div class="stage-name">building artifact and storing</div>
+                              <div class="stage-status">{{ steps.dockerhub.status }}</div>
+                            </div>
+                          </div>
+
+                          <!-- deployment -->
+                          <h5> Docker is a suite of software development tools for creating, sharing and running individual containers; Kubernetes is a system for operating containerized applications at scale </h5>
+                          <img src="../../../assets/images/docker.png" alt="Blog post image">
+                          <img src="../../../assets/images/kubernetes.png" alt="Blog post image">
+                          <div class="pipeline">
+                            <div class="stage" [ngClass]="{ 'completed': steps.docker.completed }" (click)="toggledocker()">
+                              <div class="stage-name">preparing docker containers</div>
+                              <div class="stage-status">{{ steps.docker.status }}</div>
+                            </div>
+
+                            <div class="stage" [ngClass]="{ 'completed': steps.kubernetes.completed }" (click)="togglekubernetes()">
+                                <div class="stage-name">orchestrating with kubernetes</div>
+                                <div class="stage-status">{{ steps.kubernetes.status }}</div>
+                              </div>
+                          </div>
+
+                          <!-- monitoring -->
+                          <h5> Prometheus collects rich metrics and provides a powerful querying language; Grafana transforms metrics into meaningful visualizations </h5>
+                          <img src="../../../assets/images/pro.png" alt="Blog post image">
+                          <img src="../../../assets/images/grafana.jpg" alt="Blog post image">
+                          <div class="pipeline">
+                            <div class="stage" [ngClass]="{ 'completed': steps.prometheus.completed }" (click)="toggleprometheus()">
+                              <div class="stage-name">configurating Prometheus</div>
+                              <div class="stage-status">{{ steps.prometheus.status }}</div>
+                            </div>
+
+                            <div class="stage" [ngClass]="{ 'completed': steps.grafana.completed }" (click)="togglegrafana()">
+                                <div class="stage-name">Set up grafana</div>
+                                <div class="stage-status">{{ steps.grafana.status }}</div>
+                              </div>
+                          </div>
+
+
+
+                          
+                          
+                            
+                        
                 </div>
+
+                
             </div>
+
+
         </div>
         <div class="blog-post">
             

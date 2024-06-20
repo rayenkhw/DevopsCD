@@ -50,3 +50,47 @@ h2{
 
 
 }
+
+
+/* pipeline.component.css */
+.pipeline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    margin: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .stage:hover {
+    transform: scale(1.1);
+  }
+  
+  .stage-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .stage-status {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .completed {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+    color: white;
+  }
+  

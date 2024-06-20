@@ -11,6 +11,7 @@ import { CoreModule } from './@core/core.module';
 import { ThemeModule } from './@theme/theme.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import {
   NbChatModule,
   NbDatepickerModule,
@@ -19,11 +20,13 @@ import {
   NbSidebarModule,
   NbToastrModule,
   NbWindowModule,
+  
 } from '@nebular/theme';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    DragDropModule,
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
