@@ -26,107 +26,108 @@
                     
                     <h4>Continuous deployment is a strategy for software development and releases in which every code change is automatically run through a pipeline of tests and inspections before being pushed into production 
                         (ressource : techtarget)</h4><br>
-            <div class="container">
-                
-                
-                <div class="blog-post">
-                    
-
-                                <h3> A simple demonstration of the workings of a CD pipleline</h3>
-                                <img src="../../../assets/images/jenkins.png" alt="Blog post image"> 
-                                <img src="../../../assets/images/gitactions.png" alt="Blog post image">
-                        <div class="pipeline">
-                            
-                            <div class="stage" [ngClass]="{ 'completed': stages.test.completed }" >
-                              <div class="stage-name">Test</div>
-                              <div class="stage-status">{{ stages.test.status }}</div>
-                            </div>
-                                
-                            <div class="stage" [ngClass]="{ 'completed': stages.build.completed }" >
-                              <div class="stage-name">Build</div>
-                              <div class="stage-status">{{ stages.build.status }}</div>
-                            </div>
-                            <div class="stage" [ngClass]="{ 'completed': stages.deploy.completed }" >
-                              <div class="stage-name">Deploy</div>
-                              <div class="stage-status">{{ stages.deploy.status }}</div>
-                            </div>
-                            <div class="stage" [ngClass]="{ 'completed': stages.monitor.completed }" >
-                              <div class="stage-name">Monitor</div>
-                              <div class="stage-status">{{ stages.monitor.status }}</div>
-                            </div>
-
-                            <br>
-                            
-                          </div>
 
 
-                            <!-- Test Junit -->
-                            <h5> JUnit is a unit testing framework for Java programming language </h5>
-                            <img src="../../../assets/images/Junit.png" alt="Blog post image"> 
-                            <img src="../../../assets/images/pytest.png" alt="Blog post image"> 
-                          <div class="pipeline">
-                            <div class="stage" [ngClass]="{ 'completed': steps.Junit.completed }" (click)="togglejunit()">
-                              <div class="stage-name">testing</div>
-                              <div class="stage-status">{{ steps.Junit.status }}</div>
-                            </div>
-                          </div>
-                        
-                          <!-- artifact build -->
-                          <h5> Docker Hub is a container registry built for developers and open source contributors to find, use, and share their container images </h5>
-                          <img src="../../../assets/images/dockerhub.png" alt="Blog post image">
-                          <img src="../../../assets/images/nexus.png" alt="Blog post image">
-                          <div class="pipeline">
-                            <div class="stage" [ngClass]="{ 'completed': steps.dockerhub.completed }" (click)="toggledockerhub()">
-                              <div class="stage-name">building artifact and storing</div>
-                              <div class="stage-status">{{ steps.dockerhub.status }}</div>
-                            </div>
-                          </div>
-
-                          <!-- deployment -->
-                          <h5> Docker is a suite of software development tools for creating, sharing and running individual containers; Kubernetes is a system for operating containerized applications at scale </h5>
-                          <img src="../../../assets/images/docker.png" alt="Blog post image">
-                          <img src="../../../assets/images/kubernetes.png" alt="Blog post image">
-                          <div class="pipeline">
-                            <div class="stage" [ngClass]="{ 'completed': steps.docker.completed }" (click)="toggledocker()">
-                              <div class="stage-name">preparing docker containers</div>
-                              <div class="stage-status">{{ steps.docker.status }}</div>
-                            </div>
-
-                            <div class="stage" [ngClass]="{ 'completed': steps.kubernetes.completed }" (click)="togglekubernetes()">
-                                <div class="stage-name">orchestrating with kubernetes</div>
-                                <div class="stage-status">{{ steps.kubernetes.status }}</div>
-                              </div>
-                          </div>
-
-                          <!-- monitoring -->
-                          <h5> Prometheus collects rich metrics and provides a powerful querying language; Grafana transforms metrics into meaningful visualizations </h5>
-                          <img src="../../../assets/images/pro.png" alt="Blog post image">
-                          <img src="../../../assets/images/grafana.jpg" alt="Blog post image">
-                          <div class="pipeline">
-                            <div class="stage" [ngClass]="{ 'completed': steps.prometheus.completed }" (click)="toggleprometheus()">
-                              <div class="stage-name">configurating Prometheus</div>
-                              <div class="stage-status">{{ steps.prometheus.status }}</div>
-                            </div>
-
-                            <div class="stage" [ngClass]="{ 'completed': steps.grafana.completed }" (click)="togglegrafana()">
-                                <div class="stage-name">Set up grafana</div>
-                                <div class="stage-status">{{ steps.grafana.status }}</div>
-                              </div>
-                          </div>
-
-
-
-                          
-                          
-                            
-                        
-                </div>
-
-                
-            </div>
+            
 
 
         </div>
+
+        <div class="blog-post">
+          <h2>Pros & Cons of Contiuous delivery</h2> <br>
+
+          <h4 style="color: green"> Pros (Advantages) :</h4> <br>
+          <div class="container">
+            
+            <ol>
+              <li><h5>Faster Time to Market: Continuous delivery enables more frequent and reliable releases, reducing the time it takes to get new features and fixes to customers.</h5></li>
+              <li><h5>Higher Quality Software: Automated testing and consistent deployment practices ensure that each release is thoroughly tested and stable, improving software quality.</h5></li>
+              <li><h5>Greater Customer Satisfaction: Frequent updates and quicker responses to feedback enhance customer satisfaction and engagement. </h5> </li>
+
+
+            </ol>
+          </div>
+
+          <h4 style="color: red" > Cons (Disadvantages) :</h4> <br>
+          <div class="container">
+            <ol>
+              <li><h5>Initial Setup Complexity: Setting up a continuous delivery pipeline requires significant initial effort, including configuring automated tests, deployment scripts, and infrastructure.
+              </h5></li>
+              <li><h5>Infrastructure Costs: The need for robust infrastructure to support automated testing, builds, and deployments can increase operational costs.
+              </h5></li>
+              <li><h5>High Maintenance: Maintaining a continuous delivery pipeline can be resource-intensive, requiring ongoing updates to scripts, tools, and infrastructure. </h5> </li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="blog-post">
+          <h2 style="color: rgb(65, 65, 204)">Kolb's Experiential Learning Cycle Applied to Continuous Delivery (CD)</h2> <br>
+
+          <h4 style="color: rgb(225, 0, 255)" > Why implement Continuous Delivery? (Concrete Experience)</h4> <br>
+          <div class="container">
+            
+            <ol>
+              <li><h5>Faster Time to Market: Organizations need to deliver new features, bug fixes, and updates to customers more quickly to stay competitive.</h5></li>
+              <li><h5>Higher Quality and Reliability: Automated testing and consistent deployment processes reduce the likelihood of defects and issues in production.</h5></li>
+              <li><h5>Improved Efficiency: Automation of repetitive tasks reduces manual intervention, allowing development teams to focus on innovation and higher-value tasks.</h5> </li>
+              <li><h5>Customer Satisfaction: Frequent updates and faster response times to user feedback lead to better customer experiences and satisfaction.</h5> </li>
+
+
+            </ol>
+          </div>
+
+          <h4 style="color: rgb(225, 0, 255)" > What is Continuous Delivery? (Reflective Observation)</h4> <br>
+          <div class="container">
+            
+            <ol>
+              <li><h5>Definition: Continuous Delivery (CD) is a software development practice where code changes are automatically built, tested, and prepared for a release to production.</h5></li>
+              <li><h5>Components:</h5>
+              <ul>
+                <li>Automated Testing: Ensures that every code change passes all tests, including unit tests, integration tests, and acceptance tests.</li>
+                <li>Build Automation: Automatically builds the application from the latest committed code.</li>
+                <li>Deployment Automation: Automatically deploys the built application to staging and production environments.</li>
+
+              </ul>
+              </li>
+              <li><h5>Benefits: CD aims to deliver software in shorter cycles, ensuring that the software can be reliably released at any time.</h5> </li>
+
+
+            </ol>
+          </div>
+
+          <h4 style="color: rgb(225, 0, 255)" > How to implement Continuous Delivery? (Abstract Conceptualization)</h4> <br>
+          <div class="container">
+            
+            <ol>
+              <li><h5>Set Up Version Control: Use a system like GitHub or GitLab to manage and version your code.</h5></li>
+              <li><h5>Automate Testing: Integrate automated testing frameworks (e.g., JUnit, Selenium) to run tests on each code commit.</h5></li>
+              <li><h5>Automate Build Process: Use tools like Jenkins, GitHub Actions, or CircleCI to automate the build process.</h5> </li>
+              <li><h5>Automate Deployment: Configure deployment scripts and use tools like Docker, Kubernetes, or AWS CodeDeploy to automate the deployment process.</h5> </li>
+              <li><h5>Monitoring and Feedback: Implement monitoring solutions (e.g., Prometheus, Grafana) to continuously monitor the deployed applications and gather feedback.</h5></li>
+
+
+            </ol>
+          </div>
+
+          <h4 style="color: rgb(225, 0, 255)" >What if we encounter challenges during Continuous Delivery implementation? (Active Experimentation)</h4> <br>
+          <div class="container">
+            
+            <ol>
+              <li><h5>Challenge: Initial Setup Complexity Solution: Start with a minimal viable pipeline and iteratively add more automation. Invest in training and leverage community resources.</h5></li>
+              <li><h5>Challenge: High Maintenance Solution: Regularly review and optimize the pipeline. Automate as much as possible to reduce manual maintenance.</h5></li>
+              <li><h5>Challenge: Cultural Resistance Solution: Promote a DevOps culture, provide training, and demonstrate the benefits through pilot projects.</h5> </li>
+              <li><h5>Challenge: Security Risks Solution: Integrate security practices into the CI/CD pipeline (e.g., automated security testing, code scanning) and enforce strict access controls.</h5> </li>
+              <li><h5>Challenge: Managing Dependencies Solution: Use dependency management tools and practices (e.g., Docker images, package managers) to ensure consistent environments.</h5></li>
+
+
+            </ol>
+          </div>
+          
+        </div>
+
+        
+
+
         <div class="blog-post">
             
             <img src="../../../assets/images/cdpipeline.png" alt="Blog post image">
@@ -137,6 +138,109 @@
                     <img src="../../../assets/images/tools2.png" alt="Blog post image">
                 
         </div>
+
+        <div class="container">
+                
+                
+          <div class="blog-post">
+              
+    
+                          <h3> A simple demonstration of the workings of a CD pipleline</h3>
+                          <img src="../../../assets/images/jenkins.png" alt="Blog post image" width="150" height="200"> 
+                          <img src="../../../assets/images/gitactions.png" alt="Blog post image" width="150" height="200">
+                  <div class="pipeline">
+                      
+                      <div class="stage" [ngClass]="{ 'completed': stages.test.completed }" >
+                        <div class="stage-name">Test</div>
+                        <div class="stage-status">{{ stages.test.status }}</div>
+                      </div>
+                          
+                      <div class="stage" [ngClass]="{ 'completed': stages.build.completed }" >
+                        <div class="stage-name">Build</div>
+                        <div class="stage-status">{{ stages.build.status }}</div>
+                      </div>
+                      <div class="stage" [ngClass]="{ 'completed': stages.deploy.completed }" >
+                        <div class="stage-name">Deploy</div>
+                        <div class="stage-status">{{ stages.deploy.status }}</div>
+                      </div>
+                      <div class="stage" [ngClass]="{ 'completed': stages.monitor.completed }" >
+                        <div class="stage-name">Monitor</div>
+                        <div class="stage-status">{{ stages.monitor.status }}</div>
+                      </div>
+    
+                      <br>
+                      
+                    </div>
+    
+    
+                      <!-- Test Junit -->
+                      <h5>Run your application through tests </h5>
+                      <img src="../../../assets/images/Junit.png" alt="Blog post image" width="150" height="200"> 
+                      <img src="../../../assets/images/pytest.png" alt="Blog post image" width="150" height="200"> 
+                    <div class="pipeline">
+                      <div class="stage" [ngClass]="{ 'completed': steps.Junit.completed }" (click)="togglejunit()">
+                        <div class="stage-name">testing</div>
+                        <div class="stage-status">{{ steps.Junit.status }}</div>
+                      </div><- Click this to complete the stage
+                    </div> 
+                  
+                    <!-- artifact build -->
+                    <h5> Docker Hub is a container registry built for developers and open source contributors to find, use, and share their container images </h5>
+                    <img src="../../../assets/images/dockerhub.png" alt="Blog post image" width="150" height="200">
+                    <img src="../../../assets/images/nexus.png" alt="Blog post image" width="150" height="200">
+                    <div class="pipeline">
+                      <div class="stage" [ngClass]="{ 'completed': steps.dockerhub.completed }" (click)="toggledockerhub()">
+                        <div class="stage-name">building artifact and storing</div>
+                        <div class="stage-status">{{ steps.dockerhub.status }}</div>
+                      </div>
+                    </div>
+    
+                    <!-- deployment -->
+                    <h5> Docker is a suite of software development tools for creating, sharing and running individual containers; Kubernetes is a system for operating containerized applications at scale </h5>
+                    <img src="../../../assets/images/docker.png" alt="Blog post image" width="150" height="200">
+                    <img src="../../../assets/images/kubernetes.png" alt="Blog post image" width="150" height="200">
+                    <div class="pipeline">
+                      <div class="stage" [ngClass]="{ 'completed': steps.docker.completed }" (click)="toggledocker()">
+                        <div class="stage-name">preparing docker containers</div>
+                        <div class="stage-status">{{ steps.docker.status }}</div>
+                      </div>
+    
+                      <div class="stage" [ngClass]="{ 'completed': steps.kubernetes.completed }" (click)="togglekubernetes()">
+                          <div class="stage-name">orchestrating with kubernetes</div>
+                          <div class="stage-status">{{ steps.kubernetes.status }}</div>
+                        </div>
+                    </div>
+    
+                    <!-- monitoring -->
+                    <h5> Prometheus collects rich metrics and provides a powerful querying language; Grafana transforms metrics into meaningful visualizations </h5>
+                    <img src="../../../assets/images/pro.png" alt="Blog post image" width="150" height="200">
+                    <img src="../../../assets/images/grafana.jpg" alt="Blog post image" width="150" height="200">
+                    <div class="pipeline">
+                      <div class="stage" [ngClass]="{ 'completed': steps.prometheus.completed }" (click)="toggleprometheus()">
+                        <div class="stage-name">configurating Prometheus</div>
+                        <div class="stage-status">{{ steps.prometheus.status }}</div>
+                      </div>
+    
+                      <div class="stage" [ngClass]="{ 'completed': steps.grafana.completed }" (click)="togglegrafana()">
+                          <div class="stage-name">Set up grafana</div>
+                          <div class="stage-status">{{ steps.grafana.status }}</div>
+                        </div>
+                    </div>
+    
+    
+    
+                    
+                    
+                      
+                  
+          </div>
+    
+          
+      </div>
+
+
+
+
         <div class="blog-post">
             <h2>A step by step guide</h2>
             <img src="../../../assets/images/repositor.png" alt="Blog post image"><br>
@@ -166,6 +270,8 @@
             Access Grafana<br>
         </div>
     </div>
+
+    
     
 </body>
 </html>
